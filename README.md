@@ -24,7 +24,7 @@ https://www.adafruit.com/product/5477
 
 ![image](https://github.com/user-attachments/assets/7f419e60-7f1b-4412-897e-798cfacb56c2)
 
-### What this Examle Does NOT Address
+### What this Example Does NOT Address
 
 * This example doesn't really take into account any security aspects. If security is important for your application, you will need to add additional security steps to this example or consider a different approach.
 

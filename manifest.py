@@ -8,16 +8,14 @@ require("ntptime")
 require("ssl")
 freeze("src")
 
-# version = subprocess.check_output(
-#     [
-#         "git",
-#         "describe",
-#         "--tags",  # Necessary because `actions/checkout` doesn't keep the annotated tags for some reason https://github.com/actions/checkout/issues/290
-#     ],
-#     encoding="utf-8",
-# )
-
-version = "0.0.1"
+version = subprocess.check_output(
+    [
+        "git",
+        "describe",
+        "--tags",  # Necessary because `actions/checkout` doesn't keep the annotated tags for some reason https://github.com/actions/checkout/issues/290
+    ],
+    encoding="utf-8",
+)
 
 commit_id = subprocess.check_output(
     ["git", "rev-parse", "HEAD"],

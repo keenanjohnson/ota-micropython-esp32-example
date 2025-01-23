@@ -1,9 +1,6 @@
 # ota-micropython-esp32-example
 This repo is an example of how to implement the basics of OTA in micropython on an esp32s3 over the wifi radio.
 
-### Current Status
-In Progress - I'm working on documenting the project and moving all the source here.
-
 ### What's Unique
 There are several other examples of how to implement OTA in a variety of ways, but this example is unique in a few ways that might be interesting to you:
 

@@ -11,6 +11,13 @@ There are several other examples of how to implement OTA in a variety of ways, b
 * It demonstrates how to build the .bin file via github actions
 * It demonstrates how to host the compiled binary images on github. 
 
+### How It Works
+The basic idea is that the device will check a github repository for a new version of the firmware. If a new version is found, it will download the new firmware and write it to the flash memory.
+
+The "current" version of the firmware is stored in the ota.json file.
+
+The OTA Manager class checks that file on a period and will initiate the download and update process if a new version is found.
+
 ### Hardware
 
 This example is specifically targetting the esp32s3 with 4MB Flash 2MB PSRAM.

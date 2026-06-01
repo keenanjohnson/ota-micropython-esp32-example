@@ -15,9 +15,11 @@ jobs:
 
     - name: Fetch submodules
       run: |
-          git submodule update --init  --recursive --depth=1
-          ( cd vendor/micropython/ports/unix ; make submodules )
-          ( cd vendor/micropython/ports/esp32 ; make submodules )
+          # Recursive clone already fetches every nested submodule the esp32
+          # port needs (mbedtls+framework, tinyusb, berkeley-db, micropython-lib).
+          # Do NOT run `make submodules` here: the esp32 target invokes idf.py,
+          # which only exists inside the espressif/idf container used by Build.
+          git submodule update --init --recursive --depth=1
 
     - name: Build
       run: |

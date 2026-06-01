@@ -7,6 +7,12 @@
 // Enable UART REPL for modules that have an external USB-UART and don't use native USB.
 #define MICROPY_HW_ENABLE_UART_REPL         (1)
 
+// USB device identity. These replace the old CONFIG_TINYUSB_DESC_* sdkconfig
+// options, which were removed upstream. The serial number is now derived from
+// the MAC address and can no longer be hard-coded.
+#define MICROPY_HW_USB_MANUFACTURER_STRING  "Keenan Johnson"
+#define MICROPY_HW_USB_PRODUCT_FS_STRING    "OTA Example"
+
 #define MICROPY_HW_I2C0_SCL                 (4)
 #define MICROPY_HW_I2C0_SDA                 (3)
 

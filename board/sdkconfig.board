@@ -1,6 +1,5 @@
-CONFIG_FLASHMODE_QIO=y
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
 CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
-CONFIG_ESPTOOLPY_FLASHSIZE_DETECT=y
 CONFIG_ESPTOOLPY_AFTER_NORESET=y
 
 CONFIG_SPIRAM_MEMTEST=
@@ -12,11 +11,10 @@ CONFIG_BOOTLOADER_APP_ROLLBACK_ENABLE=y
 CONFIG_PARTITION_TABLE_CUSTOM=y
 CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions-4MiB-ota.csv"
 
-CONFIG_TINYUSB_DESC_MANUFACTURER_STRING="Keenan Johnson"
-CONFIG_TINYUSB_DESC_PRODUCT_STRING="OTA Example"
-CONFIG_TINYUSB_DESC_SERIAL_STRING="ota-example"
+# USB descriptor strings moved to MICROPY_HW_USB_* macros in mpconfigboard.h
+# (the CONFIG_TINYUSB_DESC_* options were removed upstream).
 
-# In order to get the most performance of the ESP32 async sleep, 
+# In order to get the most performance of the ESP32 async sleep,
 # we set the freeRTOS clock to 1000Hz (above the default of 100Hz)
 # See https://github.com/orgs/micropython/discussions/15594 for more details on why
 CONFIG_FREERTOS_HZ=1000
